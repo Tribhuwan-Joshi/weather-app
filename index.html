@@ -7,15 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WeatherCraft</title>
     <link rel="icon" id="web-icon" href="">
-<script defer src="bundle.js?c4b82057d6d550db2a25"></script></head>
+<script defer src="bundle.js?6ffe428228bac991138d"></script></head>
 
-<body class="h-full flex flex-col justify-around items-center bg-bgImage bg-no-repeat bg-cover p-6">
-    <div class="jukebox h-[60px] bg-musicOn bg-no-repeat bg-cover w-[60px]  self-end"></div>
-    <audio class="hidden" >
+<body class="h-full flex flex-col justify-start  bg-gray-300 bg-no-repeat bg-bgImage bg-cover gap-32 p-6 py-7 font-mc ">
+    <div class="header flex justify-between items-center flex-wrap">
+        <div class="heading font-mcBold text-4xl tracking-wider  items-center p-2 bg-gray-200">WeatherCraft</div>
+        <div class="search-container flex flex-col  mr-44">
+            <div class="search-container flex items-center gap-4">
+
+                <input type="text" name="city" id="city" placeholder="City"
+                    class="px-2 outline-none py-1 tracking-wide w-[300px]  bg-white/95">
+                    <span class="w-8 h-8 flex items-center"><img src="" alt="search" class="search w-5 hover:cursor-pointer hover:w-7"></span>
+                
+            </div>
+            <div class="response text-sm ml-2 font-semibold"> City not found</div>
+        </div>
+
+        <div class="jukebox h-[50px] bg-musicOff  bg-no-repeat bg-cover w-[50px] hover:cursor-pointer "></div>
+
+    </div>
+
+    <audio loop class="hidden">
         <source src="./bgMusic.mp3" class="bgMusic" type="audio/mp3">
     </audio>
-    <div class="data-container w-[600px] h-[600px] bg-white/80 p-2">
-        <div class="city text-center text-4xl tracking-widest">Delhi</div>
+    <div class="data-container  flex justify-center gap-4 items-center">
+        <div class="day2 bg-white/95 w-72 h-72 border-2 border-black "></div>
+        <div class="day1 w-96 h-96 bg-white/90 p-2 border-2 border-black">
+            <div class="city text-center text-3xl tracking-widest">Sweden</div>
+
+        </div>
+        <div class="day3 bg-white/95 w-72 h-72 border-2 border-black "></div>
+
 
     </div>
 
