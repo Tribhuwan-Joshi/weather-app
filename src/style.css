@@ -6,6 +6,13 @@
   font-family: mc;
   src: url("../mc-reg.otf") format("opentype");
 }
-body {
+@font-face {
+  font-family: mc-bold;
+  src: url("../Minecrafter.Reg.ttf") format("truetype");
+}
+body{
   font-family: mc;
+}
+.heading{
+  font-family: mc-bold;
 }

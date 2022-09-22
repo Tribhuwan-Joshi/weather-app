@@ -1,4 +1,5 @@
 import "./style.css";
+import { format } from "date-fns";
 
 import icon from "./Images/icon.png";
 const iconTag = document.querySelector("#web-icon");
@@ -14,6 +15,12 @@ audioSrc.setAttribute("src", bgMusic);
 const jukebox = document.querySelector(".jukebox");
 jukebox.addEventListener("click", toggleImg);
 jukebox.addEventListener("click", toggleMusic);
+
+import searchIcon from "./Images/search.png"
+const search = document.querySelector(".search");
+search.setAttribute("src", searchIcon);
+
+
 
 let isOn = false;
 function toggleMusic() {
@@ -35,23 +42,53 @@ function toggleImg() {
   }
 }
 
-async function getWeather(query) {
-  try {
+const app = (() => {
+  function giveData(day) {
+    const res = {};
+    res.weather = day.weather[0].main;
+    res.temp = day.main.temp;
+    res.feelslike = day.main.feels_like;
+    res.windSpeed = day.wind.speed;
+    res.humidity = day.main.humidity;
+    res.pop = `${day.pop * 100}%`;
+    res.icon = day.weather[0].icon;
+    const dt = day.dt_txt.split(" ");
+    res.date = format(new Date(dt[0]), "dd MMM yyyy");
+    res.time = new Date().toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+    });
+    return res;
+  }
+  async function getWeather(query) {
     const res = await fetch(
       `http://api.openweathermap.org/data/2.5/forecast?q=${query}&APPID=d48a46383954cbdee3198804107fd92d`,
       {
         mode: "cors",
       }
     );
-    if (res.status != 200) throw new Error("City Data unavailable");
-    else {
-      const data = await res.json();
-      console.log(data);
-    }
-  } catch (err) {
-    console.log(err.message);
-  }
-}
+    const data = await res.json();
+    const cityName = data.city.name;
+    const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
+    const countryName = regionNames.of(data.city.country);
+    const day1 = giveData(data.list[2]);
+    day1.city = cityName;
+    day1.countryName = countryName;
+    const day2 = giveData(data.list[10]);
+    const day3 = giveData(data.list[18]);
 
-const city = "sweden";
-getWeather(city);
+    console.log(day1);
+    console.log(day2);
+    console.log(day3);
+  }
+  return {
+    getWeather,
+    giveData,
+  };
+})();
+
+
+const city = "Ranikhet"
+app.getWeather(city);
+// 914885793;
