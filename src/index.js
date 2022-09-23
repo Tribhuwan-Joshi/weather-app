@@ -2,26 +2,49 @@ import "./style.css";
 import { format } from "date-fns";
 
 import icon from "./Images/icon.png";
-const iconTag = document.querySelector("#web-icon");
-iconTag.setAttribute("href", icon);
 
 import bgMusic from "./bgMusic.mp3";
+
+import searchIcon from "./Images/search.png";
+
+// import all weather Icon
+import cloudSky from "./Images/02d.png";
+import nightClear from "./Images/01n.png";
+import nightCloud from "./Images/02n.png";
+import denseCloud from "./Images/03d.png";
+import rainCloud from "./Images/09d.png";
+import thunder from "./Images/11d.png";
+import snow from "./Images/13d.png";
+import haze from "./Images/50d.png";
+import minmax from "./Images/minmax.png";
+import rainDrop from "./Images/rain.png";
+import wind from "./Images/wind.png";
+import humidity from "./Images/humidity.png";
+import clearDay from "./Images/clearDay.png";
+
+const humidityIcon = document.querySelector(".humidity-icon");
+humidityIcon.setAttribute("src", humidity);
+
+const windIcon = document.querySelector(".wind-icon");
+windIcon.setAttribute("src", wind);
+
+const minmaxIcon = document.querySelector(".minmax-icon");
+minmaxIcon.setAttribute("src", minmax);
+
+const rainChance = document.querySelector(".rain-icon");
+rainChance.setAttribute("src", rainDrop);
+
+const iconTag = document.querySelector("#web-icon");
+iconTag.setAttribute("href", icon);
 const audio = document.querySelector("audio");
 audio.volume = 0.6;
 const audioSrc = document.querySelector(".bgMusic");
 audioSrc.setAttribute("src", bgMusic);
 
-// add jukebox for music
+const weatherImg = document.querySelector(".weather-icon");
+weatherImg.setAttribute("src", rainCloud);
+
 const jukebox = document.querySelector(".jukebox");
-jukebox.addEventListener("click", toggleImg);
-jukebox.addEventListener("click", toggleMusic);
-
-import searchIcon from "./Images/search.png"
-const search = document.querySelector(".search");
-search.setAttribute("src", searchIcon);
-
-
-
 let isOn = false;
 function toggleMusic() {
   if (isOn) {
@@ -41,6 +64,13 @@ function toggleImg() {
     jukebox.classList.remove("bg-musicOff");
   }
 }
+
+// add jukebox for music
+jukebox.addEventListener("click", toggleImg);
+jukebox.addEventListener("click", toggleMusic);
+
+const search = document.querySelector(".search");
+search.setAttribute("src", searchIcon);
 
 const app = (() => {
   function giveData(day) {
@@ -88,7 +118,6 @@ const app = (() => {
   };
 })();
 
-
-const city = "Ranikhet"
+const city = "Ranikhet";
 app.getWeather(city);
 // 914885793;
