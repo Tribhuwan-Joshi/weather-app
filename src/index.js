@@ -22,27 +22,29 @@ import wind from "./Images/wind.png";
 import humidity from "./Images/humidity.png";
 import clearDay from "./Images/clearDay.png";
 
-const humidityIcon = document.querySelector(".humidity-icon");
-humidityIcon.setAttribute("src", humidity);
+// const humidityIcon = document.querySelector(".humidity-icon");
+// humidityIcon.setAttribute("src", humidity);
 
-const windIcon = document.querySelector(".wind-icon");
-windIcon.setAttribute("src", wind);
+// const windIcon = document.querySelector(".wind-icon");
+// windIcon.setAttribute("src", wind);
 
-const minmaxIcon = document.querySelector(".minmax-icon");
-minmaxIcon.setAttribute("src", minmax);
+// const minmaxIcon = document.querySelector(".minmax-icon");
+// minmaxIcon.setAttribute("src", minmax);
 
-const rainChance = document.querySelector(".rain-icon");
-rainChance.setAttribute("src", rainDrop);
+// const rainChance = document.querySelector(".rain-icon");
+// rainChance.setAttribute("src", rainDrop);
+
+// const weatherImg = document.querySelector(".weather-icon");
+// weatherImg.setAttribute("src", rainCloud);
 
 const iconTag = document.querySelector("#web-icon");
 iconTag.setAttribute("href", icon);
+
 const audio = document.querySelector("audio");
 audio.volume = 0.6;
 const audioSrc = document.querySelector(".bgMusic");
 audioSrc.setAttribute("src", bgMusic);
 
-const weatherImg = document.querySelector(".weather-icon");
-weatherImg.setAttribute("src", rainCloud);
 
 const jukebox = document.querySelector(".jukebox");
 let isOn = false;
@@ -52,6 +54,7 @@ function toggleMusic() {
     isOn = false;
   } else {
     audio.play();
+    console.log("start music");
     isOn = true;
   }
 }
