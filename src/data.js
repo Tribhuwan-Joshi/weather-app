@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 async function getJSON(query) {
-  console.log(query);
+
   const res = await fetch(
     `http://api.openweathermap.org/data/2.5/forecast?q=${query}&APPID=d48a46383954cbdee3198804107fd92d`,
     {
