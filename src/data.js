@@ -19,9 +19,9 @@ function getDayData(day) {
   const res = {};
   res.weather = day.weather[0].main;
   res.temp = (day.main.temp - 273.15).toFixed(1) * 1;
-  res.windSpeed = day.wind.speed * 3.6;
+  res.windSpeed = Math.round(day.wind.speed * 3.6);
   res.humidity = day.main.humidity;
-  res.pop = `${day.pop * 100}%`;
+  res.pop = (day.pop * 100).toFixed(2) *1;
   res.icon = day.weather[0].icon;
   const dt = day.dt_txt.split(" ");
   res.date = format(new Date(dt[0]), "dd MMM yyyy");

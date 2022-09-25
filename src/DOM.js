@@ -23,7 +23,6 @@ rainIcon.forEach((i) => i.setAttribute("src", rainDrop));
 minmaxIcon.setAttribute("src", minmax);
 
 // All variables placeholder
-
 const day1City = document.querySelector(".cityName");
 const day1Time = document.querySelector(".time");
 const day1Date = document.querySelector(".day1-date");
@@ -66,10 +65,10 @@ const day3pop = document.querySelector(".day3-extra-info .pop-value");
   searchIcon.setAttribute("src", search);
   const inputBar = document.querySelector("#city");
   const response = document.querySelector(".response");
-  inputBar.focus();
   let initialCity = localStorage.getItem("city") || "Sweden";
   let res = await fetchData(initialCity);
-  console.log(res);
+  renderData(res);
+  inputBar.focus();
   searchIcon.addEventListener("click", searchCity);
   inputBar.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
@@ -87,15 +86,13 @@ const day3pop = document.querySelector(".day3-extra-info .pop-value");
         inputBar.value = "";
         inputBar.focus();
       } else {
+        localStorage.setItem("city", city);
         response.classList.add("invisible");
-        console.log(res);
+        renderData(res);
         inputBar.value = "";
         inputBar.focus();
-        localStorage.setItem("city", city);
       }
-    }
-    else
-      inputBar.focus();  
+    } else inputBar.focus();
   }
 })();
 
@@ -122,3 +119,69 @@ const day3pop = document.querySelector(".day3-extra-info .pop-value");
     }
   }
 })();
+
+// render all the data - day1 , day2 , day3
+// import weather icon
+
+import nightClear from "./Images/clearN.png";
+import clearDay from "./Images/clearDay.png";
+import fewCloud from "./Images/fewCloud.png";
+import cloud from "./Images/cloud.png";
+import rainCloud from "./Images/rainCloud.png";
+import thunder from "./Images/thunder.png";
+import snow from "./Images/snow.png";
+import mist from "./Images/mist.png";
+
+const iconObj = {
+  "01d": clearDay,
+  "01n": nightClear,
+  "02d": fewCloud,
+  "02n": cloud,
+  "03d": cloud,
+  "03n": cloud,
+  "04d": cloud,
+  "04n": cloud,
+  "09d": rainCloud,
+  "09n": rainCloud,
+  "10d": rainCloud,
+  "10n": rainCloud,
+  "11d": thunder,
+  "11n": thunder,
+  "13d": snow,
+  "13n": snow,
+  "50d": mist,
+  "50n": mist,
+};
+
+function renderData(res) {
+  // day1
+  day1City.textContent = res.city;
+  day1Time.textContent = res.day1.time;
+  day1Date.textContent = res.day1.date;
+  day1Icon.src = iconObj[res.day1.icon];
+  day1Weather.textContent = res.day1.weather;
+  day1Temp.textContent = `${res.day1.temp}°c`;
+  day1humidity.textContent = `${res.day1.humidity}%`;
+  day1windSpeed.textContent = `${res.day1.windSpeed} km/h`;
+  day1pop.textContent = `${res.day1.pop}%`;
+  day1Min.textContent = `${res.day1.min}°c`;
+  day1Max.textContent = `${res.day1.max}°c`;
+
+  // day2
+  day2Date.textContent = res.day2.date;
+  day2Icon.src = iconObj[res.day2.icon];
+  day2Weather.textContent = res.day2.weather;
+  day2Temp.textContent = `${res.day2.temp}°c`;
+  day2humidity.textContent = `${res.day2.humidity}%`;
+  day2windSpeed.textContent = `${res.day2.windSpeed} km/h`;
+  day2pop.textContent = `${res.day2.pop}%`;
+
+  // day3
+   day3Date.textContent = res.day3.date;
+   day3Icon.src = iconObj[res.day3.icon];
+   day3Weather.textContent = res.day3.weather;
+   day3Temp.textContent = `${res.day3.temp}°c`;
+   day3humidity.textContent = `${res.day3.humidity}%`;
+   day3windSpeed.textContent = `${res.day3.windSpeed} km/h`;
+   day3pop.textContent = `${res.day3.pop}%`;
+}

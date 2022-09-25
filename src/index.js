@@ -1,15 +1,5 @@
 import "./style.css";
 // import all weather Icon
-import cloudSky from "./Images/02d.png";
-import nightClear from "./Images/01n.png";
-import nightCloud from "./Images/02n.png";
-import denseCloud from "./Images/03d.png";
-import rainCloud from "./Images/09d.png";
-import thunder from "./Images/11d.png";
-import snow from "./Images/13d.png";
-import haze from "./Images/50d.png";
-
-import clearDay from "./Images/clearDay.png";
 
 // const humidityIcon = document.querySelector(".humidity-icon");
 // humidityIcon.setAttribute("src", humidity);
@@ -26,14 +16,8 @@ import clearDay from "./Images/clearDay.png";
 // const weatherImg = document.querySelector(".weather-icon");
 // weatherImg.setAttribute("src", rainCloud);
 
-
-
-
-
-
-
 // city to find
-import "./DOM.js"
+import "./DOM.js";
 // const inputBar = document.querySelector("#city");
 // const searchBtn = document.querySelector(".search");
 // searchBtn.addEventListener("click", fetchData);
@@ -119,5 +103,3 @@ import "./DOM.js"
 // const city = "Ranikhet";
 // app.getWeather(city);
 // // 914885793;
-
-import "./DOM";
