@@ -16,5 +16,5 @@
 - Maximum and Minimum Temperature
 - Chance of Raining
 
-image.png
 
+[!WeatherCraft]()
