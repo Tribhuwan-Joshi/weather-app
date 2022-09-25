@@ -1,11 +1,4 @@
 import "./style.css";
-
-import icon from "./Images/icon.png";
-
-import bgMusic from "./bgMusic.mp3";
-
-import searchIcon from "./Images/search.png";
-
 // import all weather Icon
 import cloudSky from "./Images/02d.png";
 import nightClear from "./Images/01n.png";
@@ -40,13 +33,13 @@ import clearDay from "./Images/clearDay.png";
 
 
 // city to find
-import { fetchData } from "./data";
-const inputBar = document.querySelector("#city");
-const searchBtn = document.querySelector(".search");
-searchBtn.addEventListener("click", fetchData);
-let cityName = "Delhi";
-cityName = inputBar.value || cityName;
-fetchData(cityName);
+import "./DOM.js"
+// const inputBar = document.querySelector("#city");
+// const searchBtn = document.querySelector(".search");
+// searchBtn.addEventListener("click", fetchData);
+// let cityName = "Delhi";
+// cityName = inputBar.value || cityName;
+// fetchData(cityName);
 
 // const jukebox = document.querySelector(".jukebox");
 // let isOn = false;
@@ -74,8 +67,8 @@ fetchData(cityName);
 // jukebox.addEventListener("click", toggleImg);
 // jukebox.addEventListener("click", toggleMusic);
 
-const search = document.querySelector(".search");
-search.setAttribute("src", searchIcon);
+// const search = document.querySelector(".search");
+// search.setAttribute("src", searchIcon);
 
 // const app = (() => {
 //   function giveData(day) {
