@@ -10,7 +10,7 @@
     "ecmaVersion": "latest"
   },
   "rules": {
-    "no-console": "off"
-    
+    "no-console": "off",
+    "eqeqeq": ["error", "off"]
   }
 }

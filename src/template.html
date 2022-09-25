@@ -34,38 +34,39 @@
         <source src="" class="bgMusic" type="audio/mp3">
     </audio>
     <div class="data-container  flex justify-center gap-4 items-center">
-        <div class="day2 hidden lg:flex bg-white/95 w-72 h-72   flex-col gap-5  ">
-            <div class="date-day2 bg-red-200/80 text-center p-1 text-lg "> 13 sep 2022</div>
+        <div class="day2 hidden lg:flex bg-white/95 w-72 h-72   flex-col gap-6  ">
+            <div class="day2-date bg-red-200/80 text-center p-1 text-lg "> 13 sep 2022</div>
             <div class="day2-main p-2 flex justify-between gap-5 items-center flex-wrap">
                 <img src="" alt="" class="w-[70px] h-[70px]  weather-icon self-start">
                 <div class="main-text text-3xl">Clear</div>
                 <div class="temp text-2xl">25°c</div>
-                <div class="day3-extra-info flex flex-col items-center gap-2">
-                    <div class="humidity flex items-center gap-2">
-                        <img src="" alt="" class="w-[20px] humidity-icon">
-                        <div class="text-lg">Humidity - </div>
-                        <div class="text-lg humidity-amount">10 %</div>
-                    </div>
-                    <div class="windSpeed flex items-center gap-2">
-                        <img src="" alt="" class="w-[20px] wind-icon">
-                        <div class="text-lg">Wind Speed - </div>
-                        <div class="text-lg wind-amount">20 km/h</div>
-                    </div>
-                    <div class="pop flex gap-2 items-center">
-                        <img src="" alt="" class="w-[20px] rain-icon">
-                        <div class="text-lg">Chance of Rain</div>
-                        <div class="value">10 %</div>
-                    </div>
-
-
+            </div>
+            <div class="day2-extra-info flex flex-col items-center gap-3">
+                <div class="humidity flex items-center gap-2">
+                    <img src="" alt="" class="w-[20px] humidity-icon">
+                    <div class="text-lg">Humidity - </div>
+                    <div class="text-lg humidity-amount">10 %</div>
                 </div>
+                <div class="windSpeed flex items-center gap-2">
+                    <img src="" alt="" class="w-[20px] wind-icon">
+                    <div class="text-lg">Wind Speed - </div>
+                    <div class="text-lg wind-amount">20 km/h</div>
+                </div>
+                <div class="pop flex gap-2 items-center">
+                    <img src="" alt="" class="w-[20px] rain-icon">
+                    <div class="text-lg">Chance of Rain</div>
+                    <div class="value">10 %</div>
+                </div>
+
+
             </div>
         </div>
+
         <div class="day1 w-max h-max lg:w-96 lg:h-96 bg-white/90 justify-between flex flex-col">
             <div class="lg:justify-between justify-center flex bg-red-100 py-2 px-1 items-center">
-                <div class="city text-3xl ">Sweden</div>
+                <div class="cityName text-3xl ">Sweden</div>
                 <div class="time hidden lg:block">1:30 AM</div>
-                <div class="date hidden lg:block">12 sep 2022</div>
+                <div class="day1-date hidden lg:block">12 sep 2022</div>
             </div>
             <div class="day1-main p-2 flex justify-between items-center  gap-2 flex-wrap">
                 <img src="" alt="" class="w-[80px] h-[80px] weather-icon self-start">
@@ -87,7 +88,7 @@
                 <div class="minmax flex items-center gap-2">
                     <img src="" alt="" class="w-[20px] minmax-icon">
                     <div class="text-lg ">Min/Max - </div>
-                    <div class="text-lg wind-amount">20°c / 30°c</div>
+                    <div class="text-lg minmax"> <span class="min">20°c</span> / <span class="max">30°c</span> </div>
                 </div>
 
                 <div class="pop flex gap-2 items-center">
@@ -96,38 +97,40 @@
                     <div class="pop-value">10 %</div>
                 </div>
 
-                <div class="toggle bg-red-200 /80 w-full text-center hover:underline hover:cursor-pointer">Imperial Units</div>
+                <div class="toggle bg-red-200 /80 w-full text-center hover:underline hover:cursor-pointer">Display in
+                    Imperial Units</div>
             </div>
 
 
         </div>
-        <div class="day3 hidden lg:flex bg-white/95 w-72 h-72   flex-col gap-5  ">
-            <div class="date-day3 bg-red-200/80 text-center p-1 text-lg "> 14 sep 2022</div>
+        <div class="day3 hidden lg:flex bg-white/95 w-72 h-72   flex-col gap-6  ">
+            <div class="day3-date bg-red-200/80 text-center p-1 text-lg "> 14 sep 2022</div>
             <div class="day3-main p-2 flex justify-between gap-5 items-center flex-wrap">
                 <img src="" alt="" class="w-[60px] h-[60px] weather-icon self-start">
                 <div class="main-text text-3xl">Clear</div>
                 <div class="temp text-2xl">25°c</div>
-                <div class="day3-extra-info flex flex-col items-center gap-2">
-                    <div class="humidity flex items-center gap-2">
-                        <img src="" alt="" class="w-[20px] humidity-icon">
-                        <div class="text-lg">Humidity - </div>
-                        <div class="text-lg humidity-amount">10 %</div>
-                    </div>
-                    <div class="windSpeed flex items-center gap-2">
-                        <img src="" alt="" class="w-[20px] wind-icon">
-                        <div class="text-lg">Wind Speed - </div>
-                        <div class="text-lg wind-amount">20 km/h</div>
-                    </div>
-                    <div class="pop flex gap-2 items-center">
-                        <img src="" alt="" class="w-[20px] rain-icon">
-                        <div class="text-lg">Chance of Rain</div>
-                        <div class="pop-value">10 %</div>
-                    </div>
-
-
+            </div>
+            <div class="day3-extra-info flex flex-col items-center gap-3">
+                <div class="humidity flex items-center gap-2">
+                    <img src="" alt="" class="w-[20px] humidity-icon">
+                    <div class="text-lg">Humidity - </div>
+                    <div class="text-lg humidity-amount">10 %</div>
                 </div>
+                <div class="windSpeed flex items-center gap-2">
+                    <img src="" alt="" class="w-[20px] wind-icon">
+                    <div class="text-lg">Wind Speed - </div>
+                    <div class="text-lg wind-amount">20 km/h</div>
+                </div>
+                <div class="pop flex gap-2 items-center">
+                    <img src="" alt="" class="w-[20px] rain-icon">
+                    <div class="text-lg">Chance of Rain</div>
+                    <div class="pop-value">10 %</div>
+                </div>
+
+
             </div>
         </div>
+    </div>
     </div>
 
     </div>
