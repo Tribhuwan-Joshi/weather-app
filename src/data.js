@@ -9,7 +9,8 @@ async function getJSON(query) {
     }
   );
   if (res.status == 200) {
-    const data = res.json();
+    const data = await res.json();
+    
     return data;
   }
   return "";
