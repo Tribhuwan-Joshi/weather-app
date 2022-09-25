@@ -1,5 +1,6 @@
 # weather-app
 - This is a weather App but I give this a minecraft touch
+- Most of the DOM manipulation in written in `Module Pattern` and `IIFE`
 
 ## Technologies Used
 - openweather API
