@@ -17,4 +17,4 @@
 - Chance of Raining
 
 
-
+![weathercraft](https://github.com/Tribhuwan-Joshi/weather-app/blob/main/src/Images/preview.png)
